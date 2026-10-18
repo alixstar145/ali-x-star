@@ -1,72 +1,77 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>چت علی ایکس استار</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: linear-gradient(135deg, #6a5cff, #21c8c8);
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-    }
-    .chat {
-      background: white;
-      width: 88%;
-      max-width: 420px;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px #0002;
-    }
-    h2 { text-align: center; color: #5144d6; }
-    #messages {
-      height: 280px;
-      overflow-y: auto;
-      background: #f3f4ff;
-      border-radius: 12px;
-      padding: 10px;
-      list-style: none;
-    }
-    #messages li {
-      background: #e1ddff;
-      padding: 9px;
-      margin: 7px 0;
-      border-radius: 10px;
-      overflow-wrap: anywhere;
-    }
-    input {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      font-size: 16px;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      background: #6554e8;
-      color: white;
-      border: 0;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-    #status { text-align: center; color: #666; font-size: 13px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>چت علی ایکس استار</title>
+<style>
+body {
+  font-family: sans-serif;
+  background: linear-gradient(135deg,#6957ff,#28d5c5);
+  padding: 20px;
+}
+.chat {
+  max-width: 420px;
+  margin: 30px auto;
+  padding: 18px;
+  background: white;
+  border-radius: 20px;
+}
+h2 { text-align: center; color: #6957ff; }
+#messages {
+  height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  background: #f3f2ff;
+  list-style: none;
+  border-radius: 12px;
+}
+#messages li {
+  background: #dedaff;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  font-size: 16px;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  background: #6957ff;
+  color: white;
+  border: 0;
+  border-radius: 10px;
+  font-size: 16px;
+}
+</style>
 </head>
 <body>
-  <main class="chat">
-    <h2>💬 چت علی ایکس استار</h2>
-    <p id="status">این صفحه آماده است؛ اتصال چت هنوز تنظیم نشده.</p>
-    <ul id="messages">
-      <li>به چت خوش آمدی! 👋</li>
-    </ul>
-    <input id="message" placeholder="پیامت را بنویس..." disabled>
-    <button disabled>ارسال پیام</button>
-  </main>
+<div class="chat">
+  <h2>💬 چت علی ایکس استار</h2>
+  <ul id="messages"></ul>
+  <input id="msg" placeholder="پیامت را بنویس...">
+  <button onclick="sendMsg()">ارسال پیام 🚀</button>
+</div>
+<script>
+function sendMsg() {
+  const input = document.getElementById("msg");
+  const value = input.value.trim();
+  if (!value) return;
+
+  const li = document.createElement("li");
+  li.textContent = "من: " + value;
+  document.getElementById("messages").appendChild(li);
+  input.value = "";
+}
+document.getElementById("msg").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") sendMsg();
+});
+</script>
 </body>
 </html>
