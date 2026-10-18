@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>چت علی ایکس استار</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(135deg, #6a5cff, #21c8c8);
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+    }
+    .chat {
+      background: white;
+      width: 88%;
+      max-width: 420px;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px #0002;
+    }
+    h2 { text-align: center; color: #5144d6; }
+    #messages {
+      height: 280px;
+      overflow-y: auto;
+      background: #f3f4ff;
+      border-radius: 12px;
+      padding: 10px;
+      list-style: none;
+    }
+    #messages li {
+      background: #e1ddff;
+      padding: 9px;
+      margin: 7px 0;
+      border-radius: 10px;
+      overflow-wrap: anywhere;
+    }
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #6554e8;
+      color: white;
+      border: 0;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+    #status { text-align: center; color: #666; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main class="chat">
+    <h2>💬 چت علی ایکس استار</h2>
+    <p id="status">این صفحه آماده است؛ اتصال چت هنوز تنظیم نشده.</p>
+    <ul id="messages">
+      <li>به چت خوش آمدی! 👋</li>
+    </ul>
+    <input id="message" placeholder="پیامت را بنویس..." disabled>
+    <button disabled>ارسال پیام</button>
+  </main>
+</body>
+</html>
